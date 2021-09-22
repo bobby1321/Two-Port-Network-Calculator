@@ -46,7 +46,7 @@ public class Rect2Polar extends Application {
 		text_theta = new TextField();
 		text_theta.setLayoutX(180);
 		text_theta.setLayoutY(180);
-		text_theta.setPromptText("θ");
+		text_theta.setPromptText("ϴ");
 		text_theta.setPrefWidth(60);
 
 		fields = new TextField[] { text_x, text_y, text_r, text_theta };
@@ -63,7 +63,6 @@ public class Rect2Polar extends Application {
 		convert = new Button("^ Convert v");
 		convert.setLayoutX(110);
 		convert.setLayoutY(120);
-		Platform.runLater(()-> convert.requestFocus());
 		convert.setOnAction(e -> {
 			tryConvert();
 		});
@@ -78,10 +77,11 @@ public class Rect2Polar extends Application {
 
 		polarLabel2 = new Label("°");
 		polarLabel2.setLayoutX(245);
-		polarLabel2.setLayoutY(185);
+		polarLabel2.setLayoutY(180);
 
 		pane.getChildren().addAll(text_x, text_y, text_r, text_theta, convert, clear, rectLabel, polarLabel,
 				polarLabel2, mainLabel);
+		Platform.runLater(()-> pane.requestFocus());
 	}
 
 	private void tryConvert() {
